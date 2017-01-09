@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.root {
+			display: flex;
+			padding: 20px;
+			width: 1000px;
+			height: 300px;
+			border: 1px solid #000;
+			margin: 100px auto;
+			margin-bottom: 10px;
+			justify-content: space-between;
+		}
+		.child1 {
+			display: flex;
+			padding: 20px;
+			width: 450px;
+			height: 260px;
+			border: 1px solid red;
+			justify-content: space-between;
+		}
+		.child2 {
+			display: flex;
+			padding: 20px;
+			width: 170px;
+			height: 220px;
+			border: 1px solid green;
+			justify-content: space-between;
+		}
+		.child3 {
+			display: flex;
+			padding: 20px;
+			width: 35px;
+			height: 180px;
+			border: 1px solid blue;
+			justify-content: space-between;
+		}
+		input {
+			margin-left: 100px;
+			width: 50px;
+			height: 40px;
+			font-size: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="root">
+		<div class="child1">
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+		</div>
+		<div class="child1">
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+			<div class="child2">
+				<div class="child3"></div>
+				<div class="child3"></div>
+			</div>
+		</div>
+	</div>
+	<input type="button" value="前序">
+	<input type="button" value="中序">
+	<input type="button" value="后序">
+</body>
+	<script type="text/javascript">
+		// 定义
+		var btn = document.getElementsByTagName('input'),
+		preBtn = btn[0],
+		inBtn = btn[1],
+		postBtn = btn[2],
+		// 根元素
+		treeRoot = document.getElementsByClassName('root')[0],
+		divList = [],
+		timer = null;
+
+		// 绑定事件
+	window.onload = function(){
+		preBtn.onclick = function(){
+			// 先清空
+			reset();
+			// 遍历算法
+			preOrder(treeRoot);
+			// 改变颜色
+			changeColor();
+		}
+		inBtn.onclick = function () {
+			reset();
+			inOrder(treeRoot);
+			changeColor(); 	
+	}
+		postBtn.onclick = function () {
+			reset();
+			postOrder(treeRoot);
+			changeColor();
+	}
+}
+	// 前序遍历
+	function preOrder(node){
+		if(!(node == null)){
+			divList.push(node);
+			// 递归?
+			/*	二叉树
+			 root
+			   child1
+			   	child2
+			   	 child3*2
+			   	child2
+			   	 child3*2
+			*/
+			// 第一个子元素节点?
+			// 继续执行
+			preOrder(node.firstElementChild);
+			// 最后一个子元素节点?
+			preOrder(node.lastElementChild);
+		}
+	}
+	// 中序遍历
+	function inOrder(node){
+		if(!(node ==null)){
+			/*
+			  child3 z
+			  	child2 
+			  		child3y
+			  			child1
+			  				child3 z
+			  					child2 
+			  						child3y
+			  						root
+			*/
+			inOrder(node.firstElementChild);
+			/*
+			var a =ul.childNodes[1]; // li 第二个
+			var b =ul.firstChild;	 // 空白
+			var c =ul.firstElementChild; // 元素节点
+			*/
+			divList.push(node);
+			inOrder(node.lastElementChild);
+		}
+	}
+	// 后序遍历
+	function postOrder(node){
+		if(!(node == null)){
+			/*
+			  child3 z
+			  	child3 y
+			  		child2	
+			  			child3 z
+			  				child3 y
+			  					child2	
+			  					child1
+			  					...
+			  					root	
+			*/
+			postOrder(node.firstElementChild);
+			postOrder(node.lastElementChild);
+			divList.push(node);
+		}
+	}
+	// 颜色改变
+	function changeColor(){
+		var i = 0;
+		/*
+			  0 root -lightblue
+			  1 child1 - lightblue /root -white? 前一个白色
+			  2 child2 - 
+
+			  清空定时器
+			  child3 - white? 回颜色
+		*/
+
+		divList[i].style.backgroundColor = 'lightblue';
+		timer = setInterval(function(){
+			i++;
+			if(i < divList.length){
+				divList[i-1].style.backgroundColor = '#fff';
+				divList[i].style.backgroundColor = 'lightblue';
+			}else{
+				clearInterval(timer);
+				divList[divList.length-1].style.backgroundColor = '#fff';
+			}
+		},1000)
+	}
+	// 初始化样式
+	function reset(){
+		divList = [];
+		clearInterval(timer);
+		// 将所有div 背景颜色变为白色
+		var divs = document.getElementsByTagName('div');
+		for(var i = 0; i <divs.length;i++){
+			divs[i].style.backgroundColor = '#fff';
+		}
+	}
+
+
+	</script>
+</html>
