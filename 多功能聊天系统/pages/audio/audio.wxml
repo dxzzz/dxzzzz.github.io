@@ -1,0 +1,6 @@
+<view class="continer">
+<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop class="audio_a" style="center"></audio>
+<button type="primary" bindtap="audioPlay" plain="true">播放</button>
+<button type="primary" bindtap="audioPause" plain="true">暂停</button>
+<button type="primary" bindtap="rimary" plain="true" class="audio_b" size="default"> 下一首 </button>
+</view>

@@ -1,0 +1,31 @@
+<!--主体-->
+<view class="find">
+
+<!--<view class="find_a">
+    每日新闻
+</view>-->
+
+<!--轮播图-->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+    <view class="find_b">
+      <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+    <!--新闻信息主体 图片和标题内容-->
+<scroll-view>
+    <view wx:for="{{list}}" wx:for-item="item">
+        <view class="find_d">
+          <text>{{item.title}}</text>
+          <image src="{{item.url}}" class="slide-image"  animation="{{animationData}}" bindtap="abc" mode="scaleToFill" style=" width:300px;height:150px" />
+    </view>
+    </view>
+</scroll-view>
+
+</view>

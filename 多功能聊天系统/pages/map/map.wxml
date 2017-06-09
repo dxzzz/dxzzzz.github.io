@@ -1,0 +1,37 @@
+<view class="wrapper">
+<view class="page-body">
+<view class="page-body-wrapper">
+  <form bindsubmit="openLocation">
+
+    <view class="page-body-form">
+      <!--获取经纬度-->
+        <text class="page-body-form-key">经度</text>
+        <input class="page-body-form-value" type="text" value="{{location.longitude}}" name="longitude" placeholder="未获取"></input>
+
+        <text class="page-body-form-key">纬度</text>
+        <input class="page-body-form-value" type="text"  value="{{location.latitude}}" name="latitude" placeholder="未获取"></input>
+
+    </view>
+    <!--获取 省份、城市、区域、街道-->
+        <text class="page-body-form-key">省份</text>
+        <input class="page-body-form-value" type="text"  disabled="{{true}}" placeholder="未获取" name="longitude" value="{{data1}}"></input>
+         <text class="page-body-form-key">城市</text>
+        <input class="page-body-form-value" type="text"  disabled="{{true}}" placeholder="未获取" name="longitude" value="{{data2}}"></input>
+         <text class="page-body-form-key">区域</text>
+        <input class="page-body-form-value" type="text"  disabled="{{true}}" placeholder="未获取" name="longitude" value="{{data3}}"></input>
+         <text class="page-body-form-key">街道</text>
+        <input class="page-body-form-value" type="text"  disabled="{{true}}" placeholder="未获取" name="longitude" value="{{data4}}"></input>
+
+    <!--点击查看 经纬、位置、地图-->
+ <view class="page-body-buttons">
+      <button class="page-body-button" type="primary" bindtap="getLocation">查看经纬</button>
+      <button type="primary" size="{{primarySize}}"  bindtap="zrimary"> 获取位置 </button>
+      <button type="primary" size="{{primarySize}}"  bindtap="a"> 查看地图 </button>
+    </view>
+
+
+
+  </form>
+</view>
+</view>
+</view>

@@ -1,0 +1,5 @@
+/* pages/video/video.wxss */
+.video_a{
+    text-align: center;
+    background-color: gainsboro
+}

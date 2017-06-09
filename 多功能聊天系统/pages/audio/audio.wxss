@@ -1,0 +1,8 @@
+.continer{
+      background-image: url("../../image/ee.jpg");
+          background-size: 100%;
+}
+.audio_a{
+   text-align: center;
+   margin-top: 100%; 
+}

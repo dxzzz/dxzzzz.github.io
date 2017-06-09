@@ -1,0 +1,25 @@
+.mine{
+    font-family: "Microsoft Yahei";
+     background-color:lavender ;
+     color: black;
+      background-image: url("../../image/gg.jpg");
+     background-size: 160%;
+     height: 300%;
+
+}
+.mine_a{
+    margin-top: 0rpx;
+   /*background: #9BCD9B;*/
+}
+.mine_b{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    margin-bottom: 18%;
+}
+.mine_d{
+    position: absolute;
+    top: 20rpx;
+    left: 100rpx;
+}

@@ -1,0 +1,19 @@
+.find{
+    background-color:lavender ;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Microsoft Yahei";
+}
+.find_a{
+    display: flex;
+    font-size: 20px;
+     font-family: "Microsoft Yahei";
+    color: black;
+    justify-content: center
+}
+.find_d{
+    border: 1px solid gainsboro;
+    margin-top:10%;
+     font-family: "Microsoft Yahei";
+    color: balck;
+}

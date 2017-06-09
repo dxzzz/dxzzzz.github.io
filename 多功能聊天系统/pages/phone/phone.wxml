@@ -1,0 +1,33 @@
+<view class="phone_a">
+          <text class="phone_label">手机型号</text>
+        <view class="phone_b">
+          <input class="phone_input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.model}}"></input> 
+        </view>
+    </view>
+    <view class="phone_a">
+          <text class="phone_label">微信语言</text>
+        <view class="">
+          <input class="phone_input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.language}}"></input> 
+        </view>
+    </view>
+    <view class="phone_a">
+          <text class="phone_label">微信版本</text>
+        <view class="">
+          <input class="phone_input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.version}}"></input> 
+        </view>
+    </view>
+    <view class="phone_a">
+          <text class="phone_label">屏幕宽度</text>
+        <view class="">
+          <input class="phone_input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.windowWidth}}"></input> 
+        </view>
+    </view>
+    <view class="phone_a">
+          <text class="phone_label">屏幕高度</text>
+        <view class="">
+          <input class="phone_input" type="text" disabled="{{true}}" placeholder="未获取" value="{{systemInfo.windowHeight}}"></input> 
+        </view>
+    </view>
+    <view class="phone_btn_area">
+            <button class="phone_btn" type="primary" bindtap="getSystemInfo">获取手机系统信息</button>
+    </view>

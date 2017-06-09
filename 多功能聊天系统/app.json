@@ -1,0 +1,44 @@
+{
+  "pages":[
+    "pages/info/info",
+      "pages/find/find",
+       "pages/mine/mine",
+        "pages/audio/audio",
+       "pages/index/index",
+        "pages/logs/logs",
+         "pages/map/map",
+         "pages/phone/phone",
+         "pages/video/video"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#9BCD9B",
+    "navigationBarTitleText": "基于微信小程序的多功能聊天系统",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor":"#9BCD9B",
+    "selectedColor":"#000",
+    "list": [{
+      "pagePath": "pages/info/info",
+      "iconPath":"image/wechat.png",
+      "selectedIconPath":"image/wechat_2.png",
+      "text": "聊天"
+    }, {
+      "pagePath": "pages/find/find",
+      "iconPath":"image/find.png",
+      "selectedIconPath":"image/find_2.png",
+      "text": "新闻"
+    }, {
+      "pagePath": "pages/mine/mine",
+      "iconPath":"image/mine.png",
+      "selectedIconPath":"image/mine_2.png",
+      "text": "娱乐"
+    }]
+  },
+   "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

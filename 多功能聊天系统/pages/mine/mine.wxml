@@ -1,0 +1,18 @@
+<view class="abc">
+
+<view class="mine">
+
+<view class="container">
+    <view wx:for="{{list}}" wx:for-item="item" class="mine_a">
+
+    <view wx:for="{{item.listTool}}" wx:for-item="i" data-url="{{i.url}}" data-log="{{i.name}}" class="mine_b" bindtap="nextPage">
+        <!--图片的设置 进行缩放-->
+    <image style=" width:20px;height:20px;margin:10px" mode="scaleToFill" src="{{i.img}}" class="mine_c"/>
+
+   <view class="mine_d">{{i.name}}</view>
+    </view>
+    </view>
+</view>
+
+</view>
+</view>

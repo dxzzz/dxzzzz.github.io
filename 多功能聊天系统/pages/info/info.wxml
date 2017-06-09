@@ -1,0 +1,37 @@
+<view class="info">
+<view class="pageContainer">
+    <view class="chat_title">
+        聊天室
+    </view>
+     <!--上部分-->
+    <view class="topArea">
+        <!--拼接的消息-->
+        <view wx:for="{{messageArray}}" wx:for-index="idx" wx:for-item="itemName">
+        
+            <!--自己的消息-->
+            <view class="selfMessage" wx:if="{{itemName.type == 'self'}}">
+                <view class="nameInfo">{{itemName.name+ " " + itemName.time}}</view>
+                <view class="detailMessage">{{itemName.message}}</view>
+            </view>
+            <!--他人的消息-->
+            <view class="otherMessage" wx:else>
+                <view class="nameInfo">{{itemName.name+ " " + itemName.time}}</view>
+                <view class="detailMessage">{{itemName.message}}</view>
+            </view>
+            <!--清除浮动-->
+            <view class="clear"></view>
+        </view>
+
+    </view>
+    <!--下部分-->
+    <view class="bottomArea">
+        <form bindreset="send">
+            <!--输入框消息-->
+            <view class="inputArea">
+                <input type="text" placeholder="{{placeholderText}}" class="message" bindinput="bindKeyInput"/>
+            </view>
+            <button size="default" type="primary" form-type="reset" class="sendButton">发送</button>
+        </form>
+    </view>
+</view>
+</view>
