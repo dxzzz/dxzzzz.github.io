@@ -1,0 +1,20 @@
+/* common css */
+body, ul, ol, li, h1, h2, h3, h4, h5, h6, table, td, th, form, fieldset, img, dl, dt, dd {margin: 0; padding: 0;}
+li, ol{
+	list-style:none;
+	font:12px/1Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+    color:#666666;
+}
+img{
+	border:0
+ }
+a{
+    cursor:pointer;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+}
+input{
+	outline: none;
+}
